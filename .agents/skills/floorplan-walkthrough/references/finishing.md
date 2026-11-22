@@ -7,6 +7,34 @@
 - 用本机已有、覆盖简体中文的字体文件。优先选当前机器上可用的思源黑体或苹方等字体，具体位置以实际文件为准。图卡在视频内烧录，回放时无需安装字体。
 - 需要配乐或旁白时，先完成音量、音轨和淡入淡出，再用 `--audio` 传入混好的音频。这样换音乐时可重新合成而无需重渲染模型。
 
+## 分两次渲染
+
+下面从本次项目目录运行，`SKILL_DIR` 是技能目录的绝对路径，`blender` 换成本机实际命令或路径。先对已保存的工程出低清全程预览，再给已精修的工程出正式帧。渲染工具读取现有工程，不会另存或修改源 `.blend`。
+
+```bash
+blender -b 成片.blend --python-exit-code 1 \
+  --python "$SKILL_DIR/scripts/render_frames.py" -- \
+  --output 预览帧 --preset preview
+
+blender -b 成片.blend --python-exit-code 1 \
+  --python "$SKILL_DIR/scripts/render_frames.py" -- \
+  --output 正式帧 --preset final
+```
+
+| 参数 | 作用 |
+| --- | --- |
+| `--preset preview` | 使用 Cycles 处理器，画面为工程分辨率的 25%，12 个采样并降噪，适合检查全程。 |
+| `--preset final` | 使用工程中的渲染引擎与设备，100% 分辨率；若是 Cycles，则用 64 个采样并降噪。先检查样帧再决定是否提高。 |
+| `--scale 50`、`--samples 32` | 分别覆盖输出比例和 Cycles 采样数；最终尺寸至少为 128 × 72。 |
+| `--start-frame 120 --end-frame 180` | 只渲染工程范围内的这段帧。适合先估算耗时或补渲，帧号保留工程编号。 |
+| `--engine CYCLES` 或 `--engine EEVEE` | 覆盖引擎。Eevee 会自动匹配当前 Blender 的标识，使用前核对本机图形设备能否渲染。 |
+| `--device CPU` 或 `--device GPU` | 覆盖 Cycles 运算设备。GPU 需要本机已有可用设备和对应 Blender 设置。 |
+| `--overwrite` | 允许替换选定范围内的编号帧。默认遇到已有帧会停止。 |
+
+目录内的 `render-info.json` 记录帧率、实际尺寸、引擎、完成帧与状态。分段补渲时，这份记录描述本次选定范围；合成前还须核对全片编号连续。正式预设只控制渲染参数，画面中的门窗、家具、材质和灯光需要事先在工程里完成。
+
+例如每秒 24 帧的工程从第 1 帧输出时，第 `n` 帧对应 `(n-1)/24` 秒。只合成从第 120 帧开始的片段时，用 `--start-frame 120`，导览时序以该片段第一张画面为零秒重新编排。
+
 ## 编写导览时序
 
 UTF-8 编码的 `cues.json` 采用下列格式。

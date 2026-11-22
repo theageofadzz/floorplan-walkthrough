@@ -1,0 +1,6 @@
+[
+  {"start": 0, "end": 2.5, "label": "户型一览", "text": "客厅与书房相邻，南侧入户。", "kind": "title"},
+  {"start": 2.5, "end": 5, "label": "入户", "text": "从南侧门洞进入客厅。"},
+  {"start": 5, "end": 7.5, "label": "客厅", "text": "沿右侧通路走向书房。"},
+  {"start": 7.5, "end": 10, "label": "书房", "text": "书桌布置在窗边。", "kind": "ending"}
+]

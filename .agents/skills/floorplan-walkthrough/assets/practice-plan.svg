@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="880" viewBox="0 0 1120 880">
+  <rect width="1120" height="880" fill="#faf8f2"/>
+  <g font-family="sans-serif" fill="#24302c">
+    <text x="80" y="62" font-size="32">虚构练习户型</text>
+    <text x="80" y="99" font-size="18">墙中心线尺寸：总宽八米，进深五米。层高与装修为演示设定。</text>
+  </g>
+  <g transform="translate(140 170)">
+    <rect width="500" height="500" fill="#e9dfd0"/>
+    <rect x="500" width="300" height="500" fill="#dce5d9"/>
+    <g stroke="#34413b" stroke-width="16" fill="none">
+      <path d="M0 0H150M400 0H550M750 0H800V500H200M100 500H0V0"/>
+      <path d="M500 0V300M500 400V500" stroke-width="12"/>
+    </g>
+    <g stroke="#6c9c9d" stroke-width="5" fill="none">
+      <path d="M150 -5H400M150 5H400M550 -5H750M550 5H750"/>
+    </g>
+    <g stroke="#9e8460" stroke-width="3" fill="none">
+      <path d="M100 500V400M100 400A100 100 0 0 1 200 500"/>
+      <path d="M500 400H600M600 400A100 100 0 0 0 500 300"/>
+    </g>
+    <g fill="#b8aa92" stroke="#8c7c64" stroke-width="2">
+      <rect x="20" y="50" width="80" height="220" rx="8"/>
+      <rect x="160" y="105" width="80" height="110" rx="6"/>
+      <rect x="565" y="23" width="160" height="65" rx="3"/>
+    </g>
+    <g font-family="sans-serif" text-anchor="middle" fill="#24302c">
+      <text x="285" y="300" font-size="30">客厅</text>
+      <text x="285" y="335" font-size="21">五米 × 五米</text>
+      <text x="650" y="245" font-size="30">书房</text>
+      <text x="650" y="280" font-size="21">三米 × 五米</text>
+      <text x="150" y="548" font-size="22">入户门洞一米</text>
+      <text x="645" y="132" font-size="20">书桌</text>
+      <text x="635" y="455" font-size="20">门洞一米</text>
+    </g>
+    <g stroke="#87928b" stroke-width="2" fill="none">
+      <path d="M0 -35V-65M500 -35V-65M800 -35V-65M0 -50H800"/>
+      <path d="M835 0H865M835 500H865M850 0V500"/>
+    </g>
+    <g font-family="sans-serif" fill="#536058" font-size="20" text-anchor="middle">
+      <text x="250" y="-64">五米</text>
+      <text x="650" y="-64">三米</text>
+      <text x="885" y="260">五米</text>
+    </g>
+  </g>
+  <g font-family="sans-serif" font-size="18" fill="#5c675f">
+    <text x="80" y="782">图中蓝线为窗洞，弧线仅表示练习图的门向。搭建脚本先生成洞口。</text>
+    <text x="80" y="815">配套布局数据以左下角为原点，向右为横轴，向上为纵轴，单位为米。</text>
+  </g>
+</svg>
