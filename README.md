@@ -24,9 +24,19 @@
 
 ## 项目介绍
 
-用 Blender 把户型平面图做成全屋漫游。这里收录了[中文制作流程](制作流程.md)、一个可运行的虚构户型示例，以及将导览文案生成透明图卡的工具。制作新户型时，先按图确认尺寸、门窗与通路，再为这套房搭模型和安排镜头。示例脚本用代码描述尺寸，平面图仍需人工校准和建模。
+用 Blender 把户型平面图做成全屋漫游。这里收录了[中文制作流程](制作流程.md)、一个可运行的虚构户型练习、一个完整的客餐厅漫游案例，以及将导览文案生成透明图卡的工具。制作新户型时，先按图确认尺寸、门窗与通路，再为这套房搭模型和安排镜头。示例脚本用代码描述尺寸，平面图仍需人工校准和建模。
 
 ## 漫游预览
+
+**《客餐厅漫游》 · 完整 48 秒 · 1280 × 720 · 简体中文导览与原创配乐**
+
+[![《客餐厅漫游》完整影片的九格画面预览](docs/preview/living-dining-cover.png)](https://theageofadzz.github.io/floorplan-walkthrough/preview/)
+
+[在线播放](https://theageofadzz.github.io/floorplan-walkthrough/preview/) · [下载完整视频](docs/preview/living-dining.mp4?raw=true) · [阅读案例说明](examples/living-dining/README.md)
+
+影片从剖切俯瞰开始，由右侧入户，经玄关、卫生间、餐厅、厨房和客厅，最后从窗边回望。入口、层高和装修细节按演示设定。
+
+### 运镜练习示例
 
 | 全屋俯瞰 | 走进客厅 |
 | --- | --- |
@@ -62,4 +72,6 @@ python scripts/make_cards.py --cues examples/cues.json --output build/cards \
 
 ## 参考与许可
 
-全屋漫游的表现方式参考了[原项目](https://github.com/ownding/larktun-monitor)及其[演示视频](https://www.bilibili.com/video/BV1Zje564Ebk)。本仓库的示例户型与示例渲染为独立制作。仓库中的代码和文档采用 [MIT 许可](LICENSE)。第三方字体需自行取得，并遵守其许可。
+全屋漫游的表现方式参考了[原项目](https://github.com/ownding/larktun-monitor)及其[演示视频](https://www.bilibili.com/video/BV1Zje564Ebk)。运镜练习采用独立制作的虚构户型。客餐厅案例按提供的平面图重新搭建，本次发布包含完整成片和案例说明。
+
+仓库中的代码和文档采用 [MIT 许可](LICENSE)。它允许读者复制、修改、发布和商业使用，随代码分发时须保留原版权声明与许可全文。许可采用「按原样提供」条款，不附带保证。样片、画面截图和随片配乐用于案例展示，第三方字体和参考素材按各自的权利条款使用。
