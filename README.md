@@ -16,7 +16,7 @@
   <strong>
     <a href="#项目介绍">项目介绍</a> · <a href="#漫游预览">漫游预览</a> · <a href="#运行示例">快速开始</a>
     <br>
-    <a href="制作流程.md">制作流程</a> · <a href="#制作导览图卡">导览图卡</a> · <a href="#参考与许可">参考与许可</a>
+    <a href="#智能体技能">智能体技能</a> · <a href="制作流程.md">制作流程</a> · <a href="#制作导览图卡">导览图卡</a> · <a href="#参考与许可">参考与许可</a>
   </strong>
 </p>
 
@@ -55,6 +55,14 @@ blender -b --factory-startup --python-exit-code 1 --python scripts/build_demo.py
 ```bash
 blender -b build/demo.blend -a
 ```
+
+## 智能体技能
+
+在本仓库打开 Codex，附上新户型图并输入「用 `$floorplan-walkthrough` 把这张户型图做成全屋漫游视频，导览用简体中文」。也可以将整个 [技能目录](.agents/skills/floorplan-walkthrough/) 复制到另一项目的 `.agents/skills/`，让那个项目里的 Codex 使用。支持读取 `SKILL.md` 的其他智能体可以从 [技能入口](.agents/skills/floorplan-walkthrough/SKILL.md) 开始。
+
+技能包含读图与验收流程、可编辑的 Blender 白模生成工具、中文导览与视频合成工具。智能体先读图并核实尺寸、洞口和通路，再安排走位，根据交付要求继续完善家具、材质和灯光。运行工具需要 Blender、Python 3、FFmpeg 和简体中文字体。
+
+另一个智能体仅使用技能目录和一张新绘制的虚构平面图，生成并重新打开了可编辑工程，也导出了带简体中文导览的十秒白模预览。这次验证覆盖规则户型的基础流程。交付正式成片时，仍需按新户型逐段验收布局、运镜和画面细节。
 
 ## 制作导览图卡
 
